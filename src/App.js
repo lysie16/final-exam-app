@@ -13,6 +13,7 @@ function App() {
           </Route>
           <Route exact path="/">
             <Navbar />
+            {/* <SidebarRight /> */}
           </Route>
         </Switch>
       </Router>

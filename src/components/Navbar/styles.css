@@ -63,7 +63,7 @@ section .homeHeader-avatar {
     font-family:'Courier New', Courier, monospace;
     font-size: 12px;
     line-height: 28px;
-    color: #fff;
+    color: black;
     margin-right: 5px;
     margin-left: 5px;
 }

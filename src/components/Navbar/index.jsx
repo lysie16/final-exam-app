@@ -30,10 +30,10 @@ export const Navbar = () => {
                     alt="social-logo" className="homeHeader-logo" />
                 </Link>
             </div>
-            <div className="homeHeader-inputSearch">
+            {/* <div className="homeHeader-inputSearch">
                 <input type="text" placeholder="Search"/>
                 <SearchIcon className="homeHeader-inputButton" />
-            </div>
+            </div> */}
             <div className="homeHeader-icons">
                 <section>
                     <Avatar className="homeHeader-avatar" alt=""  src=""/>
@@ -47,7 +47,7 @@ export const Navbar = () => {
                <h3 className="homeHeader-dash"> | </h3>
 
                <section>
-                   <h3 className="homeHeader-name">Find Friends</h3>
+                   <h3 className="homeHeader-name">Friends</h3>
                </section>
 
                <h3 className="homeHeader-dash"> | </h3>
