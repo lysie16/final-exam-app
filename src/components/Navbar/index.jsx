@@ -7,20 +7,11 @@ import TelegramIcon from '@material-ui/icons/Telegram';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 import {useHistory} from 'react-router-dom';
-
- 
+import {Logout} from "../Logout";
 
 
 
 export const Navbar = () => {
-
-    const history=useHistory('');
-
-    const logout = (event) => {
-        event.preventDefault();
-        //auth.signOut();
-        //history.push("/login")'
-    }   
     
     return (
         <div className="navbar">
@@ -86,8 +77,9 @@ export const Navbar = () => {
                    <div className="dropdown">
                         {/* <ArrowDropDownIcon className="dropdown"></ArrowDropDownIcon> */}
                         <div className="dropdown-content">
-                            <a onClick={logout}><p>Logout</p></a>
+                            {/* <a onClick={logout}><p>Logout</p></a> */}
                         </div>
+                        <Logout />
                    </div>
                </section>
 

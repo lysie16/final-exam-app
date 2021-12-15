@@ -1,19 +1,44 @@
 import './styles.css';
-import { useState} from 'react';
+import {useState, useEffect} from 'react';
 import {useForm} from 'react-hook-form';
+import {useHistory} from 'react-router-dom';
+import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from 'firebase/auth';
+
+
 
 export const LoginPage = () => {
+    const history = useHistory('');
     const [mode, setMode] = useState("login");
 
-    const{register, handleSubmit } =useForm();
+    const{register, handleSubmit } = useForm();
 
-    const loginUser = (formVals) => {
-        console.log("Login Submitted", formVals)
-    }
+    const loginUser = async(formVals) => {
 
-    const signUpUser = () => {
-        console.log("Sign Up Submitted")
-    }
+        try {
+            console.log("Login Submitted", formVals);
+            const auth = getAuth();
+            const loginUser = await signInWithEmailAndPassword(auth, formVals.user, formVals.password);
+            history.push("/");
+        } catch(error) {
+            console.log("Error connecting to firebase", error)
+        }
+      }
+    
+
+
+    const signUpUser = async(formVals) => {
+        console.log("Sign Up Submitted", formVals)
+        const auth = getAuth();
+        try {
+            const signUpUser = await createUserWithEmailAndPassword(auth, formVals.user, formVals.password);
+            console.log("New user was created", signUpUser);
+            history.push("/");
+        }catch(error) {
+            //handle inccorect password here
+            console.log("Error from firebase", error)
+        }
+        
+    } 
 
     return (
         <div className="login-page">
@@ -29,10 +54,10 @@ export const LoginPage = () => {
                     <br />
 
                     <label htmlFor="user">Username</label>
-                    <input type="email" name="user" required />
+                    <input type="email" name="user" required {...register('user')}/>
 
                     <label htmlFor="password">Password</label>
-                    <input type="password" name="password" required />
+                    <input type="password" name="password" required  {...register('password')} />
 
                     <input type="submit" value="Login" />
                     <br />
@@ -44,19 +69,19 @@ export const LoginPage = () => {
 
             {mode === "signup" && (
 
-            <form className="form-layout" onSubmit={handleSubmit(loginUser)}>
+            <form className="form-layout" onSubmit={handleSubmit(signUpUser)}>
                 <h2>Create a new account</h2>
                 <br />
 
                 <label htmlFor="user">Email</label>
-                <input type="email" name="user" required />
+                <input type="email" name="user" required  {...register('user')}/>
 
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" required />
+                <input type="password" name="password" required  {...register('password')}/>
 
                 
                 <label htmlFor="passwordConfirm">Confirm Password</label>
-                <input type="password" name="passwordConfirm" required />
+                <input type="password" name="passwordConfirm" required  {...register('passwordConfirm')}/>
 
                 <input type="submit" value="Sign Up" />
                 <br />
