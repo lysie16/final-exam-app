@@ -11,7 +11,7 @@ import {Logout} from "../Logout";
 
 
 
-export const Navbar = () => {
+export const Navbar = ({user}) => {
     
     return (
         <div className="navbar">
@@ -28,7 +28,7 @@ export const Navbar = () => {
             <div className="homeHeader-icons">
                 <section>
                     <Avatar className="homeHeader-avatar" alt=""  src=""/>
-                    <h3 className="homeHeader-name">Elysse</h3>
+                    <h3 className="homeHeader-name">{user}</h3>
                 </section>
                 <h3 className="homeHeader-dash"> | </h3>
                <section>
@@ -74,16 +74,8 @@ export const Navbar = () => {
                <h3 className="homeHeader-dash"> | </h3>
 
                <section>
-                   <div className="dropdown">
-                        {/* <ArrowDropDownIcon className="dropdown"></ArrowDropDownIcon> */}
-                        <div className="dropdown-content">
-                            {/* <a onClick={logout}><p>Logout</p></a> */}
-                        </div>
                         <Logout />
-                   </div>
                </section>
-
-               <h3 className="homeHeader-dash"> | </h3>
             </div>
         </div>
     )

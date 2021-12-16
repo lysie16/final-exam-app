@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {LoginPage} from './components/pages/LoginPage';
 import {Navbar} from './components/Navbar';
 import {ProfilePage} from './components/pages/ProfilePage';
-import {Sidebar} from './components/Sidebar';
 
 
 
@@ -19,7 +18,6 @@ function App() {
           <Route exact path="/">
             <Navbar />
             <div className="app-page">
-            <Sidebar />
             {/* <div className="app-posts">
               <Posts />
             </div> */}

@@ -1,9 +1,11 @@
 import { getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 import {useEffect, useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 export const Logout = () => {
 
     const [user, setUser] = useState(null);
+    const history = useHistory();
 
     useEffect(
         () => {
@@ -22,6 +24,7 @@ export const Logout = () => {
         const auth = getAuth();
         try {
             await signOut(auth);
+            history.push("/login");
         }catch(error) {
             console.log(error)
         }
