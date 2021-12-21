@@ -75,7 +75,7 @@ section .homeHeader-avatar {
 }
 
 .navbar section:hover {
-    background-color: gray;
+    background-color: rgb(56, 125, 165);
     cursor: pointer;
 }
 

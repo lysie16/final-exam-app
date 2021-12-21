@@ -11,6 +11,7 @@ import {Logout} from "../Logout";
 
 
 
+
 export const Navbar = ({user}) => {
     
     return (
@@ -21,30 +22,24 @@ export const Navbar = ({user}) => {
                     alt="social-logo" className="homeHeader-logo" />
                 </Link>
             </div>
-            {/* <div className="homeHeader-inputSearch">
-                <input type="text" placeholder="Search"/>
-                <SearchIcon className="homeHeader-inputButton" />
-            </div> */}
             <div className="homeHeader-icons">
                 <section>
+                <Link to="/me">
                     <Avatar className="homeHeader-avatar" alt=""  src=""/>
                     <h3 className="homeHeader-name">{user}</h3>
+                </Link>
                 </section>
                 <h3 className="homeHeader-dash"> | </h3>
                <section>
+                <Link to="/">
                    <h3 className="homeHeader-name">Home</h3>
+                </Link>
                </section>
 
                <h3 className="homeHeader-dash"> | </h3>
 
                <section>
                    <h3 className="homeHeader-name">Friends</h3>
-               </section>
-
-               <h3 className="homeHeader-dash"> | </h3>
-
-               <section>
-                   <h3 className="homeHeader-name">Create Post</h3>
                </section>
 
                <h3 className="homeHeader-dash"> | </h3>
@@ -75,6 +70,15 @@ export const Navbar = ({user}) => {
 
                <section>
                         <Logout />
+               </section>
+
+               <h3 className="homeHeader-dash"> | </h3>
+
+            {/*Create a New Post*/}
+               <section>
+                    <Link to="/NewPost">
+                    <h3 className="homeHeader-name">Add New Post</h3>
+                    </Link>
                </section>
             </div>
         </div>

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {LoginPage} from './components/pages/LoginPage';
 import {Navbar} from './components/Navbar';
 import {ProfilePage} from './components/pages/ProfilePage';
+import {HomePage} from './components/pages/HomePage';
+import {NewPostPage} from './components/pages/NewPostPage';
 
 
 
@@ -17,16 +19,15 @@ function App() {
           </Route>
           <Route exact path="/">
             <Navbar />
-            <div className="app-page">
-            {/* <div className="app-posts">
-              <Posts />
-            </div> */}
-            {/* <Sidebar2 /> */}
-            </div>
+            <HomePage />
           </Route>
-          <Route exact path="/profile">
+          <Route exact path="/me">
             <Navbar />
-            <ProfilePage />
+            <ProfilePage /> 
+          </Route>
+          <Route exact path="/NewPost">
+           <Navbar />
+            <NewPostPage />
           </Route>
         </Switch>
       </Router>
