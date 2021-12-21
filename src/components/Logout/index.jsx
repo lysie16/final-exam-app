@@ -1,3 +1,4 @@
+import { SettingsInputCompositeSharp } from '@material-ui/icons';
 import { getAuth, onAuthStateChanged, signOut} from 'firebase/auth';
 import {useEffect, useState} from 'react';
 import {useHistory} from 'react-router-dom';
