@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { PostOrderContextProvider} from './context/postOrderContext';
 
 
 // Import the functions you need from the SDKs you need
@@ -12,21 +13,21 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB9pSjCqjbTrImemBJJ5DK3yyf-cxH8CPI",
-  authDomain: "final-exam-21946.firebaseapp.com",
-  projectId: "final-exam-21946",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
   storageBucket: "final-exam-21946.appspot.com",
-  messagingSenderId: "18690583218",
-  appId: "1:18690583218:web:5f08158c27def9f53077ab"
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <PostOrderContextProvider>
     <App />
-  </React.StrictMode>,
+  </PostOrderContextProvider>,
   document.getElementById('root')
 );
 

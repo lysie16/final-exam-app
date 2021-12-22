@@ -36,7 +36,7 @@ export const HomePage = () => {
             <div className="post-container">
                 {
                     posts.map( (post) => (
-                        <Post user={post.user?.stringValue} text={post.text?.stringValue} />
+                        <Post user={post.user?.stringValue} text={post.text?.stringValue}/>
                     ))
                 }
             </div>
