@@ -92,6 +92,6 @@ section .homeHeader-avatar {
 }
 
 .navbar section button:hover {
-    background-color: gray;
+    background-color: rgb(56, 125, 165);
     cursor: pointer;
 }

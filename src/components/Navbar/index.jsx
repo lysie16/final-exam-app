@@ -13,7 +13,7 @@ import {Logout} from "../Logout";
 
 
 export const Navbar = ({user}) => {
-    
+
     return (
         <div className="navbar">
             <div className="header-left">
@@ -25,7 +25,7 @@ export const Navbar = ({user}) => {
             <div className="homeHeader-icons">
                 <section>
                 <Link to="/me">
-                    <Avatar className="homeHeader-avatar" alt=""  src=""/>
+                    <Avatar className="homeHeader-avatar" alt=""  src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fpixabay.com%2Fvectors%2Ffemale-user-avatar-woman-profile-2022387%2F&psig=AOvVaw0w9Sqgb_g36crQac_KHSGb&ust=1640213101673000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCIiI5I_89fQCFQAAAAAdAAAAABAD"/>
                     <h3 className="homeHeader-name">{user}</h3>
                 </Link>
                 </section>
